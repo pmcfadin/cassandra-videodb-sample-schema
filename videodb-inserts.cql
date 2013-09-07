@@ -1,9 +1,9 @@
 //Users
 INSERT INTO users (username, firstname, lastname, email, password, created_date) 
-VALUES ('tcodd','Ted','Codd', 'tcodd@relational.com','5f4dcc3b5aa765d61d8327deb882cf99','2011-06-01 08:00:00');
+VALUES ('tcodd','Ted','Codd', ['tcodd@relational.com', 'ted.codd@relational.com'],'5f4dcc3b5aa765d61d8327deb882cf99','2011-06-01 08:00:00');
 
 INSERT INTO users (username, firstname, lastname, email, password, created_date)
-VALUES ('cdate','Chris','Date', 'cdate@relational.com','6cb75f652a9b52798eb6cf2201057c73','2011-06-20 13:50:00');
+VALUES ('cdate','Chris','Date', ['cdate@relational.com','chris.date@relational.com'],'6cb75f652a9b52798eb6cf2201057c73','2011-06-20 13:50:00');
 
 //Videos
 INSERT INTO videos (videoid, videoname, username, description, tags, upload_date) 
@@ -39,6 +39,7 @@ WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
 UPDATE video_rating SET rating_counter = rating_counter + 4, rating_total = rating_total + 1 
 WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
 
+// Video Comments. One for each side of the view.
 // Insert in pairs
 // This is done using the batch command to group our operations.
 BEGIN BATCH

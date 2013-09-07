@@ -2,17 +2,15 @@ CREATE KEYSPACE videodb WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replic
 
 use videodb;
 
-// Basic entity table
-// Object mapping ?
+// Basic entity table for a user
+// Includes a LIST of email addresses
 CREATE TABLE users (
    username varchar,
    firstname varchar,
    lastname varchar,
-   email varchar,
+   email list<varchar>,
    password varchar,
    created_date timestamp,
-   total_credits int,
-   credit_change_date timeuuid,
    PRIMARY KEY (username)
 );
 
