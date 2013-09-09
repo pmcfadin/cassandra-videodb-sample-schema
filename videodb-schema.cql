@@ -19,7 +19,8 @@ CREATE TABLE videos (
    videoid uuid,
    videoname varchar,
    username varchar,
-   description varchar, 
+   description varchar,
+   location varchar,
    tags set<varchar>,
    upload_date timestamp,
    PRIMARY KEY (videoid)
