@@ -20,7 +20,7 @@ CREATE TABLE videos (
    videoname varchar,
    username varchar,
    description varchar,
-   location varchar,
+   location map<varchar,varchar>,
    tags set<varchar>,
    upload_date timestamp,
    PRIMARY KEY (videoid)
@@ -33,8 +33,8 @@ CREATE TABLE username_video_index (
    videoid uuid,
    upload_date timestamp,
    videoname varchar,
-   PRIMARY KEY (username, videoid)
-);
+   PRIMARY KEY (username,upload_date,videoid)
+) WITH CLUSTERING ORDER BY (upload_date DESC);
 
 // Counter table
 CREATE TABLE video_rating (
@@ -48,7 +48,7 @@ CREATE TABLE video_rating (
 CREATE TABLE tag_index (
    tag varchar, 
    videoid uuid,
-   timestamp timestamp,
+   tag_ts timestamp,
    PRIMARY KEY (tag, videoid)
 );
 
@@ -81,5 +81,6 @@ CREATE TABLE video_event (
    video_timestamp bigint,
    PRIMARY KEY ((videoid,username), event_timestamp,event)
 ) WITH CLUSTERING ORDER BY (event_timestamp DESC,event ASC);
+
 
 
