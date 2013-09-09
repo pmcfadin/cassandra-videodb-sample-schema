@@ -14,13 +14,13 @@ CREATE TABLE users (
    PRIMARY KEY (username)
 );
 
-// One-to-many entity table
+//  Entity table that will store many videos for a unique user
 CREATE TABLE videos (
    videoid uuid,
    videoname varchar,
    username varchar,
    description varchar, 
-   tags list<varchar>,
+   tags set<varchar>,
    upload_date timestamp,
    PRIMARY KEY (videoid)
 );
