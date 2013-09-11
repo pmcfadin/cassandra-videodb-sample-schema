@@ -57,7 +57,7 @@ CREATE TABLE tag_index (
 CREATE TABLE comments_by_video (
    videoid uuid,
    username varchar,
-   comment_ts timestamp,
+   comment_ts timeuuid,
    comment varchar,
    PRIMARY KEY (videoid,comment_ts,username)
 ) WITH CLUSTERING ORDER BY (comment_ts DESC, username ASC);
@@ -66,7 +66,7 @@ CREATE TABLE comments_by_video (
 CREATE TABLE comments_by_user (
    username varchar,
    videoid uuid,
-   comment_ts timestamp,
+   comment_ts timeuuid,
    comment varchar,
    PRIMARY KEY (username,comment_ts,videoid)
 ) WITH CLUSTERING ORDER BY (comment_ts DESC, videoid ASC);
