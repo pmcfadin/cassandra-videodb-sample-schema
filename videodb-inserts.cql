@@ -52,11 +52,21 @@ VALUES ('pmcfadin',873ff430-9c23-4e60-be5f-278ea2bb21bd,'2013-05-16 16:50:00','B
 INSERT INTO username_video_index (username, videoid, upload_date, videoname) 
 VALUES ('pmcfadin',49f64d40-7d89-4890-b910-dbf923563a33,'2013-06-11 11:00:00','The World''s Next Top Data Model');
 
+// Video Rating counters
+UPDATE video_rating SET rating_counter = rating_counter + 1, rating_total = rating_total + 3 
+WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
+
+UPDATE video_rating SET rating_counter = rating_counter + 1, rating_total = rating_total + 5 
+WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
+
+UPDATE video_rating SET rating_counter = rating_counter + 1, rating_total = rating_total + 4 
+WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
 
 // tag_index
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('cats',99051fe9-6a9c-46c2-b949-38ef78858dd0, '2012-05-25 08:30:29');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('piano',99051fe9-6a9c-46c2-b949-38ef78858dd0, '2012-05-25 08:30:29');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('lol',99051fe9-6a9c-46c2-b949-38ef78858dd0, '2012-05-25 08:30:29');
+
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('dogs',b3a76c6b-7c7f-4af6-964f-803a9283c401, '2012-08-30 16:50:00');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('piano',b3a76c6b-7c7f-4af6-964f-803a9283c401, '2012-08-30 16:50:00');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('lol',b3a76c6b-7c7f-4af6-964f-803a9283c401, '2012-08-30 16:50:00');
@@ -83,16 +93,6 @@ INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('cassandra',49f64d40-7d89-4
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('data model',49f64d40-7d89-4890-b910-dbf923563a33, '2013-06-11 11:00:00');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('examples',49f64d40-7d89-4890-b910-dbf923563a33, '2013-06-11 11:00:00');
 INSERT INTO tag_index (tag, videoid, tag_ts) VALUES ('instruction',49f64d40-7d89-4890-b910-dbf923563a33, '2013-06-11 11:00:00');
-
-// Video Rating counters
-UPDATE video_rating SET rating_counter = rating_counter + 3, rating_total = rating_total + 1 
-WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
-
-UPDATE video_rating SET rating_counter = rating_counter + 5, rating_total = rating_total + 1 
-WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
-
-UPDATE video_rating SET rating_counter = rating_counter + 4, rating_total = rating_total + 1 
-WHERE videoid = 99051fe9-6a9c-46c2-b949-38ef78858dd0;
 
 // Video Comments. One for each side of the view.
 // Insert in pairs

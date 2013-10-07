@@ -79,7 +79,7 @@ CREATE TABLE video_event (
    event varchar,
    event_timestamp timeuuid,
    video_timestamp bigint,
-   PRIMARY KEY ((videoid,username), event_timestamp,event)
+   PRIMARY KEY ((videoid,username),event_timestamp,event)
 ) WITH CLUSTERING ORDER BY (event_timestamp DESC,event ASC);
 
 
