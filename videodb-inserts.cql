@@ -1,3 +1,5 @@
+use videodb;
+
 //Users
 INSERT INTO users (username, firstname, lastname, email, password, created_date) 
 VALUES ('tcodd','Ted','Codd', ['tcodd@relational.com', 'ted.codd@relational.com'],'5f4dcc3b5aa765d61d8327deb882cf99','2011-06-01 08:00:00');

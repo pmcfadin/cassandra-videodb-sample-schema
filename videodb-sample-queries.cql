@@ -27,7 +27,7 @@ FROM videos
 WHERE videoid = 06049cbb-dfed-421f-b889-5f649a0de1ed;
 
 // Select map collection. Individual elements can be returned.
-SELECT location[1]
+SELECT location
 FROM videos
 WHERE videoid = 06049cbb-dfed-421f-b889-5f649a0de1ed;
 
@@ -116,7 +116,12 @@ WHERE username = 'cdate';
 SELECT dateOf(event_timestamp), event, video_timestamp
 FROM video_event
 WHERE videoID = 99051fe9-6a9c-46c2-b949-38ef78858dd0
-AND username= 'tcodd'
-AND event = 'stop';
+AND username= 'tcodd';
 
+// Get the last 5 video events
+SELECT dateOf(event_timestamp), event, video_timestamp
+FROM video_event
+WHERE videoID = 99051fe9-6a9c-46c2-b949-38ef78858dd0
+AND username= 'tcodd'
+limit 5;
 
