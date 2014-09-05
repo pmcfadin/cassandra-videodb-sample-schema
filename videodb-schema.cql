@@ -23,10 +23,16 @@ CREATE TABLE users (
    PRIMARY KEY (userid)
 );
 
-// Entity table that will store many videos for a unique user
+// User Defined Type
 // Meta data - Height, Width, Bit rate, Encoding
-// Map thumbnails - stop, url
-// Selected thumbnail
+CREATE type video_metadata (
+   height int,
+   width int,
+   video_bit_rate set<text>,
+   encoding text
+);
+
+// Entity table that will store many videos for a unique user
 CREATE TABLE videos (
    videoid uuid,
    userid uuid,
@@ -36,6 +42,7 @@ CREATE TABLE videos (
    location_type int,
    preview_thumbnails map<text,text>,  // <position in video, url of thumbnail>
    tags set<varchar>,
+   metadata set <frozen<video_metadata>>,
    added_date timestamp,
    PRIMARY KEY (videoid)
 );
